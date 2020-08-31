@@ -3,7 +3,7 @@ var map = L.map('mapid', {
 	tap: !L.Browser.mobile
 }).setView([20.287, 85.8445], 12);
 
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaXRzYXR1bGtyIiwiYSI6ImNrZWZ3bTVndjB1bDUydHQ1aGg1OHdtd2MifQ.b11WZNfzeFrSK716mqOwGg', {
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaXRzYXR1bGtyIiwiYSI6ImNrZWliY2M5bDFpYTcycm43ejNla2dkdGkifQ.Z4Bnlezvmp2qqtbjAkp7tQ', {
     maxZoom: 18,
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
         'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -28,7 +28,7 @@ info.update = function(props) {
             props ?
             'Ward: <b>' + props.wardno + '</b><br />' +
             'Zone: <b>' + props.municipalzone + '</b><br />' +
-            'Active as of 28 Aug: <b>' + props.positive + '</b><br />' +
+            'Active as of 31st Aug: <b>' + props.positive + '</b><br />' +
             'New Cases: <b>' + props.new_positive + '</b><br />' +
             'Recovered: <b>' + props.cured + '</b><br />' +
             'Recent Recovery: <b>' + props.new_cured + '</b><br />' :
