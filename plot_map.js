@@ -3,7 +3,7 @@ var map = L.map('mapid', {
 	tap: !L.Browser.mobile
 }).setView([20.287, 85.8445], 12);
 
-L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaXRzYXR1bGtyIiwiYSI6ImNrZWliY2M5bDFpYTcycm43ejNla2dkdGkifQ.Z4Bnlezvmp2qqtbjAkp7tQ', {
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaXRzYXR1bGtyIiwiYSI6ImNrZWliZ3F0MDA3ZDUycXBpb2VjbzNpNTcifQ.nw6SseL5YZlwCqedGsRbkQ', {
     maxZoom: 18,
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
         'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
