@@ -91,8 +91,6 @@ function zoomToFeature(e) {
 }
 
 function onEachFeature(feature, layer) {
-    console.log('feature', feature);
-    // console.log(feature.properties.sno)
     var myIcon = L.divIcon({
         className: 'ward-details-container',
         html: 'W' + feature.properties.sno
@@ -146,3 +144,34 @@ legend.onAdd = function(map) {
 };
 
 legend.addTo(map);
+
+function handlePermission(map) {
+  navigator.permissions.query({name:'geolocation'}).then(function(result) {
+    if (result.state == 'granted') {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(currentPosition);
+        }
+        report(result.state);
+    } else if (result.state == 'prompt') {
+          report(result.state);
+          navigator.geolocation.getCurrentPosition(currentPosition);
+    } else if (result.state == 'denied') {
+        report(result.state);
+    }
+    result.onchange = function() {
+        report(result.state);
+    }
+  });
+}
+
+function report(state) {
+  console.log('Permission ' + state);
+}
+
+function currentPosition(position) {
+    var latlng = L.latLng(position.coords.latitude, position.coords.longitude)
+
+    L.marker([position.coords.latitude, position.coords.longitude]).addTo(map)
+        .bindPopup("<b>Hey buddy!</b><br />You are here.").openPopup();
+}
+handlePermission();
